@@ -1,0 +1,83 @@
+/* === Feedback form — Figma look ======================================== */
+:root{
+  --ff-base: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --c-text: #2E2F42;
+  --c-border: #808080;
+  --c-accent: #4D5AE5;
+  --c-accent-hover: #404BBF;
+  --radius: 16px;
+  --radius-sm: 8px;
+  --shadow: 0 2px 8px rgba(46,47,66,.08);
+}
+
+/* Карта форми */
+.feedback-form{
+  width: 392px;             /* 360 + 2*16 падінги зліва/праворуч */
+  padding: 24px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow);
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--ff-base);
+  color: var(--c-text);
+}
+
+/* Підпис + поле в стовпчик */
+.feedback-form label{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: left;
+}
+
+/* Поля */
+.feedback-form input[type="email"],
+.feedback-form textarea{
+  width: 360px;             /* як у макеті */
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;       /* висота ~40px для input */
+  font: inherit;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+  background: #fff;
+}
+
+/* Висота textarea за макетом */
+.feedback-form textarea{
+  height: 120px;            /* підженеш за Figma при потребі */
+  resize: vertical;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus{
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 3px rgba(77,90,229,.2);
+}
+
+/* Кнопка */
+.feedback-form button[type="submit"]{
+  align-self: flex-start;   /* щоб кнопка не розтягувалась на всю ширину */
+  height: 40px;
+  min-width: 120px;         /* можна 100–140px за смаком/макетом */
+  padding: 0 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--c-accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, box-shadow .2s ease, transform .02s ease;
+}
+.feedback-form button[type="submit"]:hover{
+  background: var(--c-accent-hover);
+}
+.feedback-form button[type="submit"]:active{
+  transform: translateY(1px);
+}
