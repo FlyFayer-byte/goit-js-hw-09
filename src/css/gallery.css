@@ -1,0 +1,47 @@
+/* === Gallery (під Figma) ================================================ */
+:root{
+  /* Підстав із Figma */
+  --gallery-gap: 24px;       /* відступ між картками */
+  --gallery-radius: 0;    /* радіус кута картки */
+  --gallery-border: #E7E9FC; /* колір лінії (як у макеті) */
+  --gallery-shadow: 0 4px 16px rgba(0,0,0,.10); /* тінь на hover */
+
+  /* Співвідношення сторін прев’ю (width/height) — з Figma */
+  --thumb-ratio: 4 / 3;
+}
+
+/* Контейнер галереї */
+.gallery{
+    margin: 0;
+    padding: 0;
+  display: grid;
+  gap: var(--gallery-gap);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Картка */
+.gallery-item{
+  border: 1px solid var(--gallery-border);
+  border-radius: var(--gallery-radius);
+  overflow: hidden;
+  background: #fff;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.gallery-item:hover{ transform: translateY(-2px); box-shadow: var(--gallery-shadow); }
+
+/* Лінк (для доступності та фокусу) */
+.gallery-link{
+  display: block;
+  outline: none;
+}
+.gallery-link:focus-visible{
+  box-shadow: 0 0 0 3px rgba(77,90,229,.25); /* підправ за макетом */
+}
+
+/* Зображення: однакова висота/масштабування */
+.gallery-image{
+  display: block;
+  width: 100%;
+  aspect-ratio: var(--thumb-ratio); /* забезпечує однакові плитки */
+  object-fit: cover;                 /* обрізання «як у макеті» */
+}
