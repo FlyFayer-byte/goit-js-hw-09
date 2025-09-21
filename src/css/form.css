@@ -1,18 +1,16 @@
-/* === Feedback form — Figma look ======================================== */
 :root{
   --ff-base: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --c-text: #2E2F42;
   --c-border: #808080;
-  --c-accent: #4D5AE5;
-  --c-accent-hover: #404BBF;
+  --c-accent: #4E75FF;
+  --c-accent-hover: #6C8CFF;
   --radius: 16px;
   --radius-sm: 8px;
   --shadow: 0 2px 8px rgba(46,47,66,.08);
 }
 
-/* Карта форми */
 .feedback-form{
-  width: 392px;             /* 360 + 2*16 падінги зліва/праворуч */
+  width: 392px;             
   padding: 24px;
   margin: 0 auto;
   border-radius: var(--radius);
@@ -26,7 +24,6 @@
   color: var(--c-text);
 }
 
-/* Підпис + поле в стовпчик */
 .feedback-form label{
   display: flex;
   flex-direction: column;
@@ -36,22 +33,20 @@
   text-align: left;
 }
 
-/* Поля */
 .feedback-form input[type="email"],
 .feedback-form textarea{
-  width: 360px;             /* як у макеті */
+  width: 360px;             
   border: 1px solid var(--c-border);
   border-radius: var(--radius-sm);
-  padding: 10px 16px;       /* висота ~40px для input */
+  padding: 10px 16px;       
   font: inherit;
   outline: none;
   transition: border-color .2s ease, box-shadow .2s ease;
   background: #fff;
 }
 
-/* Висота textarea за макетом */
 .feedback-form textarea{
-  height: 120px;            /* підженеш за Figma при потребі */
+  height: 120px;            
   resize: vertical;
 }
 
@@ -61,12 +56,11 @@
   box-shadow: 0 0 0 3px rgba(77,90,229,.2);
 }
 
-/* Кнопка */
 .feedback-form button[type="submit"]{
-  align-self: flex-start;   /* щоб кнопка не розтягувалась на всю ширину */
+  align-self: flex-start;   
   height: 40px;
-  min-width: 120px;         /* можна 100–140px за смаком/макетом */
-  padding: 0 20px;
+  min-width: 95px;         
+  padding: 8px 16px;
   border: none;
   border-radius: var(--radius-sm);
   background: var(--c-accent);
